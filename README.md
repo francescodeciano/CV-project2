@@ -46,7 +46,7 @@ with $ \alpha \in {0.0, 0.2, 0.5, 0.8, 1.0} $
 The `RRDataset` consists of `.jpg`, `.png` and `.jpeg` extension files. A rule-based text to label conversion is realized to dynamically extract the files for all six possible combinations.
 
 ### Data Augmentation Pipeline
-- Training set: resized to 256, center cropped to 224 with random horizontal flip ($ p = 0.5 $), random rotation ($ 10^∘ $) and ImageNet normalization
+- Training set: resized to 256, center cropped to 224 with random horizontal flip ( p = 0.5 ), random rotation ( 10^∘ ) and ImageNet normalization
 - Validation/Test set: resized to 256, center cropped to 224 and ImageNet normalization
 
 IMPORTANT NOTE: because of random flip and rotation output metrics and classifications are never the same.
