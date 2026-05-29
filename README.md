@@ -108,6 +108,8 @@ Varying the `alpha` value allows analyzing whether the two tasks compete for rep
 
 All evaluation data are exported in the `metrics` folder in CSV format.
 
+Restart session and execute all again at each change in ALPHA variable.
+
 ## Authors and References
 
 * **Li, Chunxiao, et al.** *“Bridging the Gap Between Ideal and Real-world Evaluation: Benchmarking AI-Generated Image Detection in Challenging Scenarios.”* Proceedings of the IEEE/CVF International Conference on Computer Vision. 2025.
