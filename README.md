@@ -49,6 +49,7 @@ The `RRDataset` consists of `.jpg`, `.png` and `.jpeg` extension files. A rule-b
 - Training set: resized to 256, center cropped to 224 with random horizontal flip ($ p = 0.5 $), random rotation ($ 10^∘ $) and ImageNet normalization
 - Validation/Test set: resized to 256, center cropped to 224 and ImageNet normalization
 
+IMPORTANT NOTE: because of random flip and rotation output metrics and classifications are never the same.
 ## Project Structure
 
 When running the execution pipeline the following directories are automatically generated:
