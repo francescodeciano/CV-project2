@@ -23,14 +23,14 @@ This framework addresses the above limitation using a multi-task approach:
 1. **Task 1**: real vs. fake detection
 2. **Task 2**: transformation classification (Original vs. Internet-transmitted vs. Re-digitized)
 
-A cross-class traces analysis is conducted to build a more resilient detection system to identify sofisticated digital manipulations.
+A cross-class traces analysis is conducted to build a more resilient detection system to identify sophisticated digital manipulations.
 
 ## Model Architecture
 
 The model consists of a shared backbone based on a pre-trained Vision Transformer (ViT-B/16), finetuned with a selective parameter unfreezing strategy.
 
-- **Backbone**: `vit_b_16`,
-- **Classification Heads**: Two independent classification heads, with a dropout of 0.3 and a ReLU activation, map the extracted 768-dimensional feature vector into the respective output space.
+- **Backbone**: `vit_b_16`
+- **Classification Heads**: Two independent classification heads, with a dropout of 0.3 and a ReLU activation, map the extracted 768-dimensional feature vector into the respective output space
 
 ### Combined Loss Function
 The model is trained to minimize a linear combination of two Cross-Entropy losses:
@@ -43,7 +43,7 @@ with $ \alpha \in {0.0, 0.2, 0.5, 0.8, 1.0} $
 
 ## Dataset
 
-The `RRDataset` consists of `.jpg`, `.png` and `.jpeg` extension files. A rule-based text to label conversion is realized to dinamically exctract the files for all six possible combinations.
+The `RRDataset` consists of `.jpg`, `.png` and `.jpeg` extension files. A rule-based text to label conversion is realized to dynamically extract the files for all six possible combinations.
 
 ### Data Augmentation Pipeline
 - Training set: resized to 256, center cropped to 224 with random horizontal flip ($ p = 0.5 $), random rotation ($ 10^∘ $) and ImageNet normalization
@@ -94,11 +94,11 @@ ALPHA = 0.5       #choose among {0.0, 0.2, 0.5, 0.8, 1.0}
 PATIENCE = 3
 ```
 
-The pipeline also includes machanisms for **reproducibility**, **early stopping** and **memory management**.
+The pipeline also includes mechanisms for **reproducibility**, **early stopping** and **memory management**.
 
 ## Ablation Study
 
-Varying the `alpha` value allows to analyze whether the two tasks compete for representational capacity or complement each other.
+Varying the `alpha` value allows analyzing whether the two tasks compete for representational capacity or complement each other.
 
 | ALPHA Value | Model Focus |
 | :--- | :--- |
@@ -108,7 +108,7 @@ Varying the `alpha` value allows to analyze whether the two tasks compete for re
 
 All evaluation data are exported in the `metrics` folder in CSV format.
 
-## Authors and Refences
+## Authors and References
 
 * **Li, Chunxiao, et al.** *“Bridging the Gap Between Ideal and Real-world Evaluation: Benchmarking AI-Generated Image Detection in Challenging Scenarios.”* Proceedings of the IEEE/CVF International Conference on Computer Vision. 2025.
   * **Official Dataset (Zenodo):** [https://zenodo.org/records/14963880](https://zenodo.org/records/14963880)
