@@ -39,7 +39,7 @@ $$
 L = \alpha \cdot L_{rf} + (1 - \alpha) \cdot L_{trans}
 $$
 
-with $ \alpha \in {0.0, 0.2, 0.5, 0.8, 1.0} $
+with $\alpha \in \{0.0, 0.5, 1.0\}$
 
 ## Dataset
 
@@ -60,7 +60,7 @@ When running the execution pipeline the following directories are automatically 
 ├── models/                          
 ├── plots/                           
 ├── metrics/                         
-├── CV_project_template.ipynb        
+├── CV2026_project.ipynb        
 └── README.md      
 ```                  
 
