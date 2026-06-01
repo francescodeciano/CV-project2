@@ -39,7 +39,7 @@ $$
 L = \alpha \cdot L_{rf} + (1 - \alpha) \cdot L_{trans}
 $$
 
-with $\alpha \in \{0.0, 0.5, 1.0\}$
+with $`\alpha \in \{0.0, 0.5, 1.0\}`$
 
 ## Dataset
 
@@ -90,7 +90,7 @@ Key hyperparameters can be set in the `Global` section of the notebook:
 LEARNING_RATE = 1e-3
 EPOCHS = 20
 BATCH_SIZE = 64
-ALPHA = 0.5       #choose among {0.0, 0.2, 0.5, 0.8, 1.0} 
+ALPHA = 0.5       #choose among {0.0, 0.5, 1.0} 
 PATIENCE = 3
 ```
 
