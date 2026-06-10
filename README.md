@@ -98,7 +98,7 @@ The pipeline also includes mechanisms for **reproducibility**, **early stopping*
 
 ## Ablation Study
 
-Varying the `alpha` value allows analyzing whether the two tasks compete for representational capacity or complement each other.
+Varying the `ALPHA` value allows analyzing whether the two tasks compete for representational capacity or complement each other.
 
 | ALPHA Value | Model Focus |
 | :--- | :--- |
@@ -106,9 +106,17 @@ Varying the `alpha` value allows analyzing whether the two tasks compete for rep
 | **0.5** | Perfectly balanced Multi-Task joint training. |
 | **1.0** | Exclusive optimization for the Real/Fake detection task. |
 
-All evaluation data are exported in the `metrics` folder in CSV format.
+To run the ablation study, change the `ALPHA` value in the `GLOBALS` section and re-execute the following sections: `GLOBALS`, `DATA` (only the cell where the DataLoaders are defined, skip the download and the extraction cells), `NETWORK` (only the model initialization cell), `TRAIN` and `TEST` (only the cell where the test function is called).
 
-Restart session and execute all again at each change in ALPHA variable.
+## Results 
+After each run, all evaluation outputs are automatically saved in the Colab temporary directory. The output filenames are built dynamically from the global variable `ALPHA` so that different ablation configurations do not overwrite each other.
+
+**Plots** (`plots/`): the file `plot_alpha{ALPHA}.png` contains the two confusion matrices produced at test time. The blue matrix represents the performance on the Real/Fake task, the green matrix reports the results for the Transformation classification task. The plot is exported as a single high resolution image (300 dpi).
+
+**Metrics** (`metrics/`): the file `breakdown_alpha{ALPHA}.csv contains a cross-class accuracy table showing Real/Fake accuracy broken down by transformation type (Original, Internet, Re-digitized).
+
+**Models** (`models/`): the best-performing checkpoint is saved as `final_model_alpha{ALPHA}.pt` and reloaded at test time. Intermediate epoch checkpoints are stored in `checkpoints/` during training and deleted at the end to save disk space.
+
 
 ## Authors and References
 
