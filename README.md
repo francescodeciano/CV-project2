@@ -106,7 +106,7 @@ Varying the `ALPHA` value allows analyzing whether the two tasks compete for rep
 | **0.5** | Perfectly balanced Multi-Task joint training. |
 | **1.0** | Exclusive optimization for the Real/Fake detection task. |
 
-To run the ablation study, change the `ALPHA` value in the `GLOBALS` section and re-execute the following sections: `GLOBALS`, `DATA` (only the cell where the DataLoaders are defined, skip the download and the extraction cells), `NETWORK` (only the model initialization cell), `TRAIN` and `TEST` (only the cell where the test function is called).
+To run the ablation study, change the `ALPHA` value in the `GLOBALS` section and re-execute the following sections: `GLOBALS`, `DATA` (only the cell where the DataLoaders are defined, skip the download and the extraction cells), `NETWORK` (only the model initialization cell), `TRAIN` and `TEST` (only the cell where the test function is called). They are however highlighted by the commente `IF YOU ARE TESTING A DIFFERENT VALUE OF ALPHA EXECUTE AGAIN THIS CELL` at the beginning of the cell.
 
 Make sure to test the code with all three values of `ALPHA` and that the models are all saved in the colab local directory to allow the function which shows the results of the ablation study to be executed correctly.
 
